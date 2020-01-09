@@ -751,4 +751,85 @@ total	district	gender
 6108	North 24 Parganas	F
 6077	Barddhaman	M
 Time taken: 53.968 seconds, Fetched: 10 row(s)
-hive (adhaar_db)> 
+hive (adhaar_db)>  select count(case when gender='M' then 1 end) as malecnt,count(case when gender='F' then 1 end) as femalecnt,district from adhaar_details_tbl group by district order by malecnt DESC,femalecnt DESC;
+Query ID = cloudera_20200108204545_c085867c-e4d5-49ea-8541-d32c84c2db1d
+Total jobs = 2
+Launching Job 1 out of 2
+Number of reduce tasks not specified. Estimated from input data size: 1
+In order to change the average load for a reducer (in bytes):
+  set hive.exec.reducers.bytes.per.reducer=<number>
+In order to limit the maximum number of reducers:
+  set hive.exec.reducers.max=<number>
+In order to set a constant number of reducers:
+  set mapreduce.job.reduces=<number>
+Starting Job = job_1578469779176_0016, Tracking URL = http://localhost:8088/proxy/application_1578469779176_0016/
+Kill Command = /usr/lib/hadoop/bin/hadoop job  -kill job_1578469779176_0016
+Hadoop job information for Stage-1: number of mappers: 1; number of reducers: 1
+2020-01-08 20:46:11,233 Stage-1 map = 0%,  reduce = 0%
+2020-01-08 20:46:27,696 Stage-1 map = 100%,  reduce = 0%, Cumulative CPU 13.34 sec
+2020-01-08 20:46:38,455 Stage-1 map = 100%,  reduce = 100%, Cumulative CPU 17.61 sec
+MapReduce Total cumulative CPU time: 17 seconds 610 msec
+Ended Job = job_1578469779176_0016
+Launching Job 2 out of 2
+Number of reduce tasks determined at compile time: 1
+In order to change the average load for a reducer (in bytes):
+  set hive.exec.reducers.bytes.per.reducer=<number>
+In order to limit the maximum number of reducers:
+  set hive.exec.reducers.max=<number>
+In order to set a constant number of reducers:
+  set mapreduce.job.reduces=<number>
+Starting Job = job_1578469779176_0017, Tracking URL = http://localhost:8088/proxy/application_1578469779176_0017/
+Kill Command = /usr/lib/hadoop/bin/hadoop job  -kill job_1578469779176_0017
+Hadoop job information for Stage-2: number of mappers: 1; number of reducers: 1
+2020-01-08 20:46:49,824 Stage-2 map = 0%,  reduce = 0%
+2020-01-08 20:46:58,554 Stage-2 map = 100%,  reduce = 0%, Cumulative CPU 3.08 sec
+2020-01-08 20:47:07,069 Stage-2 map = 100%,  reduce = 100%, Cumulative CPU 7.08 sec
+MapReduce Total cumulative CPU time: 7 seconds 80 msec
+Ended Job = job_1578469779176_0017
+MapReduce Jobs Launched: 
+Stage-Stage-1: Map: 1  Reduce: 1   Cumulative CPU: 17.61 sec   HDFS Read: 46494014 HDFS Write: 20478 SUCCESS
+Stage-Stage-2: Map: 1  Reduce: 1   Cumulative CPU: 7.08 sec   HDFS Read: 25782 HDFS Write: 11087 SUCCESS
+Total MapReduce CPU Time Spent: 24 seconds 690 msec
+OK
+malecnt	femalecnt	district
+4276	2859	Barddhaman
+3772	3121	North 24 Parganas
+3630	2448	South 24 Parganas
+3543	1744	Bhagalpur
+3485	1766	Patna
+3460	1673	Nadia
+3018	1399	Murshidabad
+2915	1487	Gaya
+2678	1388	Kolkata
+2622	1352	Katihar
+2522	1195	Samastipur
+2371	1370	Bhojpur
+2265	1140	Jaipur
+2219	1092	Ahmedabad
+2181	1327	Bengaluru
+2174	1248	Khagaria
+2099	966	East Champaran
+2084	937	West Champaran
+2053	1003	Munger
+1933	618	Madhubani
+1920	798	Darbhanga
+1904	1509	Jalpaiguri
+1883	872	Nalanda
+1830	886	Sitamarhi
+1800	1005	Allahabad
+1780	925	Malda
+1631	755	Saran
+1619	910	Rohtas
+1585	1347	Paschim Medinipur
+1536	1393	Howrah
+1503	707	Jaunpur
+1455	151	Malappuram
+1392	671	Mumbai Suburban
+1374	554	Lucknow
+1351	817	Uttar Dinajpur
+1345	809	Ghaziabad
+1332	646	Gopalganj
+1295	514	Vaishali
+1291	570	Jodhpur
+1279	243	Thiruvananthapuram
+1270	692	Surat
