@@ -1,6 +1,0 @@
-#time description
-<<<<<<< HEAD
-18:38 Kronos
-=======
-19:46 Kronos
->>>>>>> 4beba3fb940d2bd620855d25da91349d19fc4b71
