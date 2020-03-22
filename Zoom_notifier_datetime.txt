@@ -1,5 +1,2 @@
 #time description
-15:19 Kronos
-15:17 Kronos
-13:51 Kronos2
-13:53 Kronos3
+19:46 Kronos
